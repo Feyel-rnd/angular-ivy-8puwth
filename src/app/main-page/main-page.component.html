@@ -160,8 +160,8 @@
   
     <div class="example-sidenav-content">
     
-      <button type="button" mat-mini-fab mat-button color="primary" (click)="drawer.toggle()">
-        <mat-icon *ngIf="drawer; else isIn">chevron_right</mat-icon>
+      <button type="button" mat-mini-fab mat-button color="primary" (click)="drawer.toggle();isOut=!isOut">
+        <mat-icon *ngIf="!isOut; else isIn">chevron_right</mat-icon>
         <ng-template #isIn><mat-icon>chevron_left</mat-icon></ng-template>
       </button>
       <br>

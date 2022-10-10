@@ -25,6 +25,7 @@ export class MainPageComponent implements OnInit {
    email : string;
    result : any;
   // app : any
+  isOut =  false;
   authorized : boolean;
   connected_users : number;
   app = environment.application
