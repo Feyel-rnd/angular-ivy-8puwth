@@ -28,6 +28,8 @@ export class MainPageComponent implements OnInit {
   authorized : boolean;
   connected_users : number;
   app = environment.application
+
+ 
   async LogOut(){
 
     await this.app.allUsers[sessionStorage.getItem("userId")].logOut()
