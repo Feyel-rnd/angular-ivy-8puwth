@@ -58,6 +58,7 @@
           <a routerLink="answer" class="nav-link align-middle px-0">
             <i class="fs-4 bi-house"></i
             ><mat-icon
+            
               matBadge="{{ analyses_actives }}"
               matBadgeSize="small"
               matTooltip="Répondre"
@@ -107,7 +108,7 @@
         <li *ngIf="authorized" class="nav-item pb-3">
           <a routerLink="sensory-profiles" class="nav-link align-middle px-0">
             <i class="fs-4 bi-house"></i
-            ><mat-icon matTooltip="Utilisateurs connectés"
+            ><mat-icon matTooltip="Profils sensoriels"
               >bubble_chart</mat-icon
             >
             <span class="ms-1 d-none d-sm-inline">Profils sensoriels</span
@@ -116,45 +117,22 @@
         </li>
       </ul>
       <hr />
-      <div class="dropdown pb-4">
-        <a
-          class="
-            d-flex
-            align-items-center
-            text-white text-decoration-none
-            dropdown-toggle
-          "
-          id="dropdownUser1"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://ui-avatars.com/api/?name={{ username }}"
-            alt="{{ username }}"
-            width="30"
-            height="30"
-            class="rounded-circle"
-          />
-
-          <span class="d-none d-sm-inline mx-1">{{ username }}</span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-          <li>
-            <a routerLink="settings" class="dropdown-item">Paramètres</a>
-          </li>
-
-          <li>
-            <a routerLink="profile" class="dropdown-item">Profil</a>
-          </li>
-          <li>
-            <hr class="dropdown-divider" />
-          </li>
-          <li>
-            <button class="dropdown-item" (click)="LogOut()">
-              Se déconnecter
-            </button>
-          </li>
-        </ul>
+      <div class=" pb-2">
+      <a [matMenuTriggerFor]="menu"><img
+        src="https://ui-avatars.com/api/?name={{ username }}"
+        alt="{{ username }}"
+        width="30"
+        height="30"
+        class="rounded-circle"
+      /><span class="d-none text-light d-sm-inline mx-1">{{ username }}</span><mat-icon class="pt-2 text-light">arrow_drop_down</mat-icon></a>
+  <mat-menu #menu="matMenu">
+  <button  mat-button routerLink="profile" class="dropdown-item">Profil</button>
+  <button  mat-button routerLink="settings" class="dropdown-item">Paramètres</button>
+  <mat-divider></mat-divider>
+  <button  mat-button class="dropdown-item" (click)="LogOut()">
+  Se déconnecter
+  </button>
+  </mat-menu>
       </div>
     </div>
   </mat-drawer>
@@ -172,6 +150,7 @@
     </button>
     <br />
     <router-outlet></router-outlet>
+    
   </div>
 </mat-drawer-container>
 <!-- <h1>Bienvenue {{ this.username }} !</h1>
