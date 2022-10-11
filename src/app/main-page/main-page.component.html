@@ -126,10 +126,10 @@
         class="rounded-circle"
       /><span class="d-none text-light d-sm-inline mx-1">{{ username }}</span><mat-icon class="pt-2 text-light">arrow_drop_down</mat-icon></a>
   <mat-menu #menu="matMenu">
-  <button  mat-button routerLink="profile" class="dropdown-item">Profil</button>
-  <button  mat-button routerLink="settings" class="dropdown-item">Paramètres</button>
+  <button  mat-button routerLink="profile" class="dropdown-item"><mat-icon class="mr-1 mb-1">perm_identity</mat-icon>Profil</button>
+  <button  mat-button routerLink="settings" class="dropdown-item"><mat-icon class="mr-1 mb-1">settings</mat-icon>Paramètres</button>
   <mat-divider></mat-divider>
-  <button  mat-button class="dropdown-item" (click)="LogOut()">
+  <button  mat-button class="dropdown-item" (click)="LogOut()"><mat-icon class="mr-1 mb-1">logout</mat-icon>
   Se déconnecter
   </button>
   </mat-menu>
