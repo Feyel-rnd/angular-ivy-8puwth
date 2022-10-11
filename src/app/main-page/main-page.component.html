@@ -149,11 +149,9 @@
       <mat-icon class="text-light" *ngIf="!isOut; else isIn">chevron_right</mat-icon>
       <ng-template #isIn><mat-icon class="text-light">chevron_left</mat-icon></ng-template>
     </button>
-  
+  <span class="text-light">Analyse sensorielle</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon text-primary" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
+  
   <button mat-button [matMenuTriggerFor]="variableMenu">
     <mat-icon class="text-primary">menu</mat-icon>
   </button>
