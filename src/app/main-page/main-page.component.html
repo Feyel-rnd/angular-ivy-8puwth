@@ -154,9 +154,13 @@
   <button mat-icon-button class="example-icon favorite-icon text-primary" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon text-primary" aria-label="Example icon-button with share icon">
-    <mat-icon>menu</mat-icon>
+  <button mat-button [matMenuTriggerFor]="variableMenu">
+    <mat-icon class="text-primary">menu</mat-icon>
   </button>
+  <mat-menu #variableMenu="matMenu">
+  <button mat-menu-item>Choisir un modèle</button>
+  <button mat-menu-item>Créer un nouveau modèle</button>
+  </mat-menu>
   </mat-toolbar>
   <div class="example-sidenav-content">
     
