@@ -18,6 +18,7 @@ export interface Analysis{
 
 @Component({
   selector: 'app-answer-page',
+  host: {'window:beforeunload':'doSomething'},
   templateUrl: './answer-page.component.html',
   styleUrls: ['./answer-page.component.css']
 })
@@ -35,7 +36,9 @@ export class AnswerPageComponent implements OnInit {
   currentItem = 'Television';
   current_analysis :any;
 sortedData: Analysis[];
-
+doSomething() {
+  console.log("OK")
+}
 constructor(public router: Router) {
   this.user = this.app.allUsers[sessionStorage.getItem("userId")]
     
