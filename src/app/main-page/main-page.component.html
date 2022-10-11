@@ -1,5 +1,5 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer #drawer class="example-sidenav bg-dark" opened = "true" mode="side">
+  <mat-drawer #drawer class="example-sidenav bg-dark" mode="side">
     <div
       class="
         d-flex
@@ -27,13 +27,14 @@
           me-md-auto
           text-white text-decoration-none
         "
-      ><img
+      >
+      <!-- <img
       src="http://cdn.shopify.com/s/files/1/0538/8242/1442/files/Feyel_claim-try.jpg?v=1618495488"
       alt="menu"
       width="50"
       height="40"
       class="rounded-circle mr-2"
-    />
+    /> -->
         <span class="fs-5 d-none mt-3 d-sm-inline"
           >Menu</span
         >
@@ -137,17 +138,28 @@
     </div>
   </mat-drawer>
 
-  <div class="example-sidenav-content">
-    <button
+  <mat-toolbar class="bg-dark">
+  <button
       type="button"
-      mat-mini-fab
+      mat-icon-button
       mat-button
-      color="primary"
+      
       (click)="drawer.toggle(); isOut = !isOut"
     >
-      <mat-icon *ngIf="!isOut; else isIn">chevron_right</mat-icon>
-      <ng-template #isIn><mat-icon>chevron_left</mat-icon></ng-template>
+      <mat-icon class="text-light" *ngIf="!isOut; else isIn">chevron_right</mat-icon>
+      <ng-template #isIn><mat-icon class="text-light">chevron_left</mat-icon></ng-template>
     </button>
+  
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon text-primary" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon text-primary" aria-label="Example icon-button with share icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  </mat-toolbar>
+  <div class="example-sidenav-content">
+    
     <br />
     <router-outlet></router-outlet>
     
