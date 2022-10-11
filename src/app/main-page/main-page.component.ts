@@ -64,9 +64,7 @@ export class MainPageComponent implements OnInit {
   const collection = mongo.db('Data').collection("Analyses");
   const collection2 = mongo.db('Data').collection("users");
   //console.log(this.app.allUsers)
-  collection2.find({}).then((value)=>{
-    this.connected_users = value.length.toString()
-  })
+ 
   
     //console.log(this.app.allUsers[key].isLoggedIn)
   
